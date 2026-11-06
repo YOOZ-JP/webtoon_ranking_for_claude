@@ -291,6 +291,25 @@ export const PLATFORMS: PlatformInfo[] = [
     ],
   },
   {
+    // ルルミル(lulumiru.com). 사이트에 '종합' 랭킹이 없어 '' 키를 쓰지 않는다.
+    // 첫 항목(만화 랭킹)이 기본 탭이며, 통계/상세의 대표 키로 사용된다.
+    // 무료/캠페인 목록은 공식 랭킹이 아니라 목록 표시 순서다(rankBasis: list_order).
+    id: "lulumiru",
+    name: "루루미루",
+    color: "#9E83F6",
+    logo: "/lulumiru.png",
+    sourceUrl: "https://lulumiru.com/ranking/manga",
+    genres: [
+      { key: "ranking_manga", label: "만화 랭킹", sourceUrl: "https://lulumiru.com/ranking/manga" },
+      { key: "ranking_smartoon", label: "스마툰 랭킹", sourceUrl: "https://lulumiru.com/ranking/smartoon" },
+      { key: "ranking_novel", label: "소설 랭킹", sourceUrl: "https://lulumiru.com/ranking/novel" },
+      { key: "free_popular", label: "무료·인기순 목록", rankBasis: "list_order", sourceUrl: "https://lulumiru.com/free/popular" },
+      { key: "free_newest", label: "무료·신착순 목록", rankBasis: "list_order", sourceUrl: "https://lulumiru.com/free/newest" },
+      { key: "campaign_popular", label: "캠페인·인기순 목록", rankBasis: "list_order", sourceUrl: "https://lulumiru.com/campaign/popular" },
+      { key: "campaign_newest", label: "캠페인·신착순 목록", rankBasis: "list_order", sourceUrl: "https://lulumiru.com/campaign/newest" },
+    ],
+  },
+  {
     id: "asura",
     name: "Asura Scans",
     color: "#9333EA",

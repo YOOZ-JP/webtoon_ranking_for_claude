@@ -13,6 +13,8 @@ interface RankingTableProps {
   rankings: Ranking[];
   platformColor: string;
   platform: string;
+  /** true면 공식 순위가 아닌 목록 표시 순서 → '순서' 라벨, 변동 미표시 */
+  listOrder?: boolean;
 }
 
 function Thumbnail({
@@ -68,6 +70,7 @@ export function RankingTable({
   rankings,
   platformColor,
   platform,
+  listOrder = false,
 }: RankingTableProps) {
   const [sortKey, setSortKey] = useState<SortKey>("rank");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
@@ -150,7 +153,7 @@ export function RankingTable({
               style={{ width: 50 }}
               className="h-10 px-2 text-center font-medium text-foreground"
             >
-              순위
+              {listOrder ? "순서" : "순위"}
             </th>
             <th
               style={{ width: 56 }}
@@ -160,7 +163,7 @@ export function RankingTable({
               style={{ width: 60 }}
               className="h-10 px-2 text-center font-medium text-foreground"
             >
-              변동
+              {listOrder ? "" : "변동"}
             </th>
             <th className="h-10 px-2 text-left font-medium text-foreground">
               작품명
@@ -213,7 +216,11 @@ export function RankingTable({
 
               {/* 변동 */}
               <td className="py-2 px-2 text-center align-middle">
-                <RankChange change={r.rank_change} />
+                {listOrder ? (
+                  <span className="text-xs text-muted-foreground">-</span>
+                ) : (
+                  <RankChange change={r.rank_change} />
+                )}
               </td>
 
               {/* 작품명 + 한국어 제목 */}

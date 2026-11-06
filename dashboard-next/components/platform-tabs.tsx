@@ -14,7 +14,7 @@ interface PlatformTabsProps {
 
 export function PlatformTabs({ selected, onSelect, stats }: PlatformTabsProps) {
   return (
-    <div className="grid grid-cols-5 sm:grid-cols-8 xl:grid-cols-[repeat(16,minmax(0,1fr))] gap-1.5 sm:gap-2 justify-items-center mx-auto max-w-4xl xl:max-w-none">
+    <div className="grid grid-cols-5 sm:grid-cols-8 xl:grid-cols-[repeat(17,minmax(0,1fr))] gap-1.5 sm:gap-2 justify-items-center mx-auto max-w-4xl xl:max-w-none">
       {PLATFORMS.map((p) => {
         const isActive = selected === p.id;
         return (

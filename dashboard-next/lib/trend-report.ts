@@ -13,6 +13,7 @@ const PLATFORM_NAMES: Record<string, string> = {
   lezhin: "레진코믹스",
   beltoon: "벨툰",
   unext: "U-NEXT",
+  lulumiru: "루루미루",
   asura: "Asura Scans",
 };
 
@@ -29,6 +30,7 @@ const PLATFORM_COLORS: Record<string, string> = {
   lezhin: "#FF2A2A",
   beltoon: "#1DB954",
   unext: "#242424",
+  lulumiru: "#9E83F6",
   asura: "#854DFF",
 };
 

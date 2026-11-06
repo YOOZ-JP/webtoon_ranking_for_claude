@@ -13,7 +13,7 @@ const PLATFORM_NAMES: Record<string, string> = {
   piccoma: "픽코마", linemanga: "라인망가", linemanga_app: "라인망가(앱)", mechacomic: "메챠코믹",
   cmoa: "코믹시모아", comico: "코미코", renta: "렌타",
   booklive: "북라이브", ebookjapan: "이북재팬", lezhin: "레진코믹스",
-  beltoon: "벨툰", unext: "U-NEXT", asura: "Asura Scans",
+  beltoon: "벨툰", unext: "U-NEXT", lulumiru: "루루미루", asura: "Asura Scans",
 };
 
 export const maxDuration = 60; // Vercel serverless timeout

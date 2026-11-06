@@ -26,6 +26,13 @@ export interface PlatformInfo {
 export interface Genre {
   key: string; // DB sub_category 값 ('' = 종합)
   label: string; // 한국어 표시명
+  /**
+   * 순위 근거. 기본값 "official"(사이트 공식 순위).
+   * "list_order"는 사이트 목록의 표시 순서일 뿐 공식 랭킹이 아님 → UI에서 순위/변동 표현을 바꾼다.
+   */
+  rankBasis?: "official" | "list_order";
+  /** 목록별 원본 페이지 (없으면 플랫폼 sourceUrl 사용) */
+  sourceUrl?: string;
 }
 
 export interface RankHistory {

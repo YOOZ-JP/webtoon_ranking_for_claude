@@ -107,7 +107,9 @@ export function DashboardClient({
     ? rankings.filter((r) => r.is_riverse)
     : rankings;
 
-  const sourceUrl = platform?.sourceUrl || "";
+  const selectedGenreInfo = platform?.genres.find((g) => g.key === selectedGenre);
+  const isListOrder = selectedGenreInfo?.rankBasis === "list_order";
+  const sourceUrl = selectedGenreInfo?.sourceUrl || platform?.sourceUrl || "";
 
   return (
     <div className="min-h-screen bg-background">
@@ -181,7 +183,10 @@ export function DashboardClient({
               </span>
             )}
             <span className="text-muted-foreground ml-2">
-              TOP {displayRankings.length} — {selectedDate}
+              {isListOrder
+                ? `목록 ${displayRankings.length}개 (사이트 표시 순서 · 공식 순위 아님)`
+                : `TOP ${displayRankings.length}`}{" "}
+              — {selectedDate}
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -226,6 +231,7 @@ export function DashboardClient({
                 rankings={displayRankings}
                 platformColor={platformColor}
                 platform={selectedPlatform}
+                listOrder={isListOrder}
               />
             </motion.div>
           )}
